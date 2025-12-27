@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายวิชา การซ่อมและบำรุงรักษาคอมพิวเตอร์ (20901-2105)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap');
+
+        :root {
+            /* สีหลักโทนม่วง-น้ำเงิน */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-hover-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            --bg-color: #f8f9fa;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --white: #ffffff;
+            --accent-color: #764ba2;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header Styling with Wave */
+        header {
+            background: var(--primary-gradient);
+            padding: 80px 20px 120px; /* เพิ่ม padding ล่างสำหรับ Wave */
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-bottom: -60px; /* ดึงเนื้อหาขึ้นมาทับ Wave เล็กน้อย */
+        }
+
+        /* Animation for Logo */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        header .logo-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* SVG Wave */
+        .custom-shape-divider-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(138% + 1.3px);
+            height: 85px;
+        }
+
+        .custom-shape-divider-bottom .shape-fill {
+            fill: var(--bg-color);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(102, 126, 234, 0.2); /* Highlight marker effect */
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        /* Grid Layout */
+        .learning-units {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        /* Fade Up Animation for Cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card Styling */
+        .unit-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        /* Stagger animation delay */
+        .unit-card:nth-child(1) { animation-delay: 0.1s; }
+        .unit-card:nth-child(2) { animation-delay: 0.2s; }
+        .unit-card:nth-child(3) { animation-delay: 0.3s; }
+        .unit-card:nth-child(4) { animation-delay: 0.4s; }
+        .unit-card:nth-child(5) { animation-delay: 0.5s; }
+        .unit-card:nth-child(6) { animation-delay: 0.6s; }
+        .unit-card:nth-child(7) { animation-delay: 0.7s; }
+        .unit-card:nth-child(8) { animation-delay: 0.8s; }
+        .unit-card:nth-child(9) { animation-delay: 0.9s; }
+        .unit-card:nth-child(10) { animation-delay: 1.0s; }
+
+
+        .unit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .unit-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .unit-card:hover .icon-wrapper {
+            background: var(--primary-gradient);
+            transform: scale(1.1);
+        }
+
+        .unit-card .icon {
+            font-size: 32px;
+            color: var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .unit-card:hover .icon {
+            color: var(--white);
+        }
+
+        .unit-badge {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .unit-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .unit-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            flex-grow: 1; /* ดันปุ่มลงล่างสุดเท่ากัน */
+        }
+
+        /* Button Styling */
+        .btn-start {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--white);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-start::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--primary-gradient);
+            transition: all 0.3s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .unit-card:hover .btn-start {
+            color: var(--white);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        .unit-card:hover .btn-start::before {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { padding-bottom: 100px; }
+            header h1 { font-size: 2rem; }
+            .container { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <h1>การซ่อมและบำรุงรักษาคอมพิวเตอร์</h1>
+            <p>รหัสวิชา 20901-2105 | หลักสูตรประกาศนียบัตรวิชาชีพ (ปวช.)</p>
+        </div>
+        
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>หน่วยการเรียนรู้</h2>
+            <p style="margin-top: 10px; color: #718096;">เลือกบทเรียนที่ต้องการศึกษา</p>
+        </div>
+
+        <div class="learning-units">
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 1</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-desktop icon"></i>
+                </div>
+                <h3>คอมพิวเตอร์และอุปกรณ์ต่อพ่วง</h3>
+                <p>เรียนรู้พื้นฐานของคอมพิวเตอร์และอุปกรณ์ต่างๆ</p>
+                <a href="หน่วย1.html" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 2</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-microchip icon"></i>
+                </div>
+                <h3>อุปกรณ์ภายในเครื่องคอมพิวเตอร์</h3>
+                <p>ศึกษาชิ้นส่วนภายใน เช่น CPU, RAM, Mainboard</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 3</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-shopping-basket icon"></i>
+                </div>
+                <h3>การเลือกใช้อุปกรณ์คอมพิวเตอร์</h3>
+                <p>หลักการเลือกซื้ออุปกรณ์ให้เหมาะสมกับการใช้งาน</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 4</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-screwdriver icon"></i>
+                </div>
+                <h3>การประกอบเครื่องคอมพิวเตอร์</h3>
+                <p>ขั้นตอนการประกอบเครื่องอย่างถูกวิธี</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 5</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-sliders-h icon"></i>
+                </div>
+                <h3>การกำหนดค่า BIOS</h3>
+                <p>การตั้งค่าระบบพื้นฐาน Input/Output</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 6</span>
+                <div class="icon-wrapper">
+                    <i class="fab fa-windows icon"></i>
+                </div>
+                <h3>การติดตั้งระบบปฏิบัติการ</h3>
+                <p>การลง Windows และการจัดการพาร์ติชัน</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 7</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-box-open icon"></i>
+                </div>
+                <h3>การติดตั้งซอฟต์แวร์ใช้งานเเละโปรเเกรมควบคุมอุปกรณ์</h3>
+                <p>ติดตั้งโปรแกรม Utility และ Driver ต่างๆ</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 8</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-clipboard-check icon"></i>
+                </div>
+                <h3>การตรวจสอบและรายงานผลการทดสอบระบบคอมพิวเตอร์</h3>
+                <p>ทดสอบประสิทธิภาพและทำรายงานส่งครู</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 9</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-stethoscope icon"></i>
+                </div>
+                <h3>การวิเคราะห์ ตรวจสอบและแก้ไขปัญหา</h3>
+                <p>เทคนิคการแก้ปัญหาคอมพิวเตอร์เบื้องต้น</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+
+            <div class="unit-card">
+                <span class="unit-badge">หน่วยที่ 10</span>
+                <div class="icon-wrapper">
+                    <i class="fas fa-shield-virus icon"></i>
+                </div>
+                <h3>การบำรุงรักษาอุปกรณ์เเละซอฟต์เเวร์</h3>
+                <p>การดูแลรักษา Hardware และ Software ให้ทนทาน</p>
+                <a href="#" class="btn-start">เข้าสู่บทเรียน</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
