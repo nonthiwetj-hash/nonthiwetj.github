@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน่วยที่ 1: คอมพิวเตอร์และอุปกรณ์ต่อพ่วง</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f0f2f5; /* สีพื้นหลังเทาอ่อนๆ */
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            color: #333;
+        }
+
+        /* กล่องเนื้อหาหลัก (Card) */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* แถบสีน้ำเงินด้านซ้าย */
+        .container::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background-color: #5d78ff; /* สีน้ำเงินม่วงตามรูป */
+        }
+
+        /* ส่วนหัวข้อหลัก */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 20px;
+        }
+
+        .header-icon {
+            font-size: 32px;
+            color: #5d78ff;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            color: #5d78ff;
+            font-size: 28px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* หัวข้อระดับ H2 */
+        h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 5px solid #5d78ff;
+            padding-left: 15px;
+        }
+
+        /* หัวข้อระดับ H3 (หัวข้อย่อยใหม่) */
+        h3 {
+            font-size: 18px;
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* เนื้อหาทั่วไป */
+        p, li {
+            line-height: 1.7;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* รายการเนื้อหาแบบไม่มีจุด */
+        ul.no-bullet {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.no-bullet li {
+            margin-bottom: 18px;
+        }
+
+        /* ตัวหนา */
+        b, strong {
+            color: #222;
+            font-weight: 600;
+        }
+
+        /* --- สไตล์เพิ่มเติมสำหรับเนื้อหาใหม่จากภาพ --- */
+        
+        /* คอนเทนเนอร์สำหรับกล่องแยกประเภทการใช้งาน */
+        .usage-types-container {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            flex-wrap: wrap; /* ให้ปัดลงบรรทัดใหม่เมื่อจอเล็ก */
+        }
+
+        /* กล่องสี่เหลี่ยมสีฟ้า */
+        .usage-box {
+            flex: 1 1 350px; /* ขยายได้ แต่ขนาดพื้นฐานคือ 350px */
+            background-color: #f8faff; /* พื้นหลังสีฟ้าอ่อนมาก */
+            border: 2px solid #9db0ff; /* ขอบสีฟ้า */
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* ส่วนหัวของกล่องสีฟ้า */
+        .usage-header {
+            background-color: #2a4cd3;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .usage-number {
+            background-color: white;
+            color: #5d78ff;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-weight: 800;
+        }
+
+        /* เนื้อหาภายในกล่อง */
+        .usage-content {
+            padding: 20px;
+        }
+
+        .usage-content p {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h1>หน่วยที่ 1: คอมพิวเตอร์และอุปกรณ์ต่อพ่วง</h1>
+        </div>
+
+        <div class="content">
+            
+            <h2>1. ประเภทของคอมพิวเตอร์</h2>
+            <p>คอมพิวเตอร์ (Computer) จัดเป็นเครื่องมืออันทรงพลังที่ช่วยเพิ่มประสิทธิภาพในการทำงาน และอำนวยประโยชน์ต่อการดำรงชีวิตในด้านต่าง ๆ ของมนุษย์ จนอาจถือได้ว่าเป็นปัจจัยที่ 5 ในการดำรงชีวิตของมนุษย์ในยุคปัจจุบัน</p>
+            <p>คอมพิวเตอร์สามารถแบ่งประเภทได้หลายเกณฑ์ ดังนี้</p>
+
+            <h3>1.1 แบ่งตามลักษณะการใช้งาน</h3>
+            <p>หากพิจารณาตามลักษณะการใช้งาน สามารถแบ่งคอมพิวเตอร์ออกได้เป็น 2 ประเภทหลัก คือ</p>
+
+            <div class="usage-types-container">
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">1 </span> คอมพิวเตอร์ที่ใช้ในงานทั่วไป (General Purpose Computer)
+                    </div>
+                    <div class="usage-content">
+                        <p>เป็นคอมพิวเตอร์ที่สามารถติดตั้งโปรแกรมต่าง ๆ ลงไปในตัวเครื่อง ทำให้เครื่องทำงานเป็นเครื่องพิมพ์เอกสาร เครื่องคำนวณ เครื่องเล่นเกม หรือเครื่องให้ความบันเทิงในรูปแบบต่าง ๆ ตามโปรแกรมที่นำมาติดตั้ง</p>
+                        <p><b>ตัวอย่าง:</b> คอมพิวเตอร์ทั่วไปที่ใช้ตามบ้านหรือตามสำนักงาน รวมถึงโทรศัพท์แบบสมาร์ตโฟน (Smartphone)</p>
+                    </div>
+                </div>
+
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">2 </span> คอมพิวเตอร์ที่ใช้งานเฉพาะด้าน (Special Purpose Computer)
+                    </div>
+                    <div class="usage-content">
+                        <p>เป็นคอมพิวเตอร์ที่ถูกออกแบบมาให้ทำงานอย่างใดอย่างหนึ่งโดยเฉพาะ ซึ่งตัวโปรแกรมใช้งานจะถูกติดตั้งหรือฝังไว้ในตัวเครื่อง จึงมีชื่อเรียกอีกชื่อหนึ่งว่า "สมองกลฝังตัว (Embedded System)"</p>
+                        <p><b>ตัวอย่าง:</b> กล่องคิดค่าโดยสารที่ติดตั้งในรถแท็กซี่มิเตอร์, เครื่องซักผ้าอัตโนมัติ, คอมพิวเตอร์ที่ใช้ในงานผลิตทางอุตสาหกรรม เช่น เครื่อง CNC และระบบ PLC</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>1.2 แบ่งตามขนาดและสมรรถนะการประมวลผล</h3>
+            <p>หากพิจารณาตามขีดความสามารถในการประมวลผลและขนาดของเครื่อง จะแบ่งได้ดังนี้</p>
+            <ul class="no-bullet">
+                <li><p><b>ซูเปอร์คอมพิวเตอร์ (Super Computer)</b><br>เป็นคอมพิวเตอร์ที่มีสมรรถนะสูงสุด ส่วนใหญ่ใช้ในงานประมวลผลข้อมูลขนาดใหญ่ และมีความซับซ้อน เช่น งานพยากรณ์อากาศหรือระบบการปล่อยยานอวกาศ และระบบงานการบิน</p></li>
+                <li><p><b>เมนเฟรมคอมพิวเตอร์ (Mainframe Computer)</b><br>เป็นคอมพิวเตอร์ที่มีสมรรถนะรองลงมา ส่วนใหญ่จะใช้ในระบบงานธนาคารหรือระบบงานในมหาวิทยาลัยขนาดใหญ่</p></li>
+                <li><p><b>มินิคอมพิวเตอร์ (Mini Computer)</b><br>เป็นคอมพิวเตอร์ที่มีสมรรถนะการประมวลผลต่ำกว่าเมนเฟรม ส่วนใหญ่จะใช้ในงานธุรกิจหรืองานอุตสาหกรรม</p></li>
+                <li><p><b>ไมโครคอมพิวเตอร์ (Micro Computer)</b><br>เป็นคอมพิวเตอร์ขนาดเล็ก ส่วนใหญ่จะมีตัวประมวลผล (Processor) เพียงตัวเดียวและมีราคาไม่สูงนัก ผู้ใช้งานทั่วไปสามารถจัดหาและเป็นเจ้าของได้ จึงนิยมใช้เป็นคอมพิวเตอร์ส่วนบุคคล (Personal Computer) โดยผู้ใช้สามารถจัดเก็บข้อมูล รวมทั้งติดตั้งโปรแกรมไว้ในเครื่องตัวเองได้ตามต้องการ และมีรูปแบบต่าง ๆ ให้เลือก ทั้งเครื่องคอมพิวเตอร์แบบตั้งโต๊ะ (Desktop Computer) เครื่องคอมพิวเตอร์แบบวางตัก (Laptop) หรือโน้ตบุ๊ก (Notebook Computer) รวมไปถึงแท็บเล็ต (Tablet) และสมาร์ตโฟน (Smartphone) โดยสามารถเชื่อมต่อแต่ละเครื่องเข้าเป็นระบบเครือข่ายคอมพิวเตอร์เพื่อใช้งานร่วมกัน</p></li>
+            </ul>
+
+            <h2>2. หลักการทำงานของคอมพิวเตอร์</h2>
+            <p>คอมพิวเตอร์ไม่ว่าจะเป็นประเภทใดหรือขนาดใด จะมีวงจรการทำงานพื้นฐาน 4 ขั้นตอน (IPOS Cycle) ซึ่งประกอบด้วยหน่วยการทำงานหลักดังนี้:</p>
+            <ul class="no-bullet">
+                <li><p><b>หน่วยรับข้อมูล (Input Unit)</b> คือ หน่วยที่ทำหน้าที่รับข้อมูลหรือคำสั่งจากภายนอกเข้ามาในระบบคอมพิวเตอร์</p></li>
+                <li><p><b>หน่วยประมวลผลกลาง (Central Processing Unit - CPU) </b> คือ หน่วยที่ทำหน้าที่ประมวลผลข้อมูลตามคำสั่งที่ได้รับ เปรียบเสมือนสมองของคอมพิวเตอร์</p></li>
+                <li><p><b>หน่วยความจำ (Memory Unit)</b> คือ หน่วยที่ทำหน้าที่เก็บข้อมูลและโปรแกรมคำสั่งเพื่อใช้ในการประมวลผล (เช่น RAM) หรือเก็บผลลัพธ์ไว้ใช้งานภายหลัง</p></li>
+                <li><p><b>หน่วยแสดงผลข้อมูล (Output Unit)</b> คือ หน่วยที่ทำหน้าที่แสดงผลลัพธ์ที่ได้จากการประมวลผลออกไปสู่ภายนอกในรูปแบบต่าง ๆ ที่มนุษย์เข้าใจ</p></li>
+            </ul>
+
+            <h2>3. ปัจจัยในการทำงานของคอมพิวเตอร์</h2>
+            <p>การนำคอมพิวเตอร์ไปใช้งาน จะต้องประกอบด้วยองค์ประกอบหรือปัจจัยหลัก 3 ประการ คือ</p>
+            <ul class="no-bullet">
+                <li>
+                    <b>1. ฮาร์ดแวร์ (Hardware)</b><br>
+                    ได้แก่ ตัวเครื่องและอุปกรณ์คอมพิวเตอร์ต่าง ๆ ที่สามารถสัมผัสได้
+                </li>
+                <li>
+                    <b>2. ซอฟต์แวร์ (Software)</b><br>
+                    คือ โปรแกรมที่ใช้สั่งงานคอมพิวเตอร์
+                </li>
+                <li>
+                    <b>3. พีเพิลแวร์ (Peopleware)</b><br>
+                    คือ บุคลากรที่ทำงานหรือใช้งานคอมพิวเตอร์
+                </li>
+            </ul>
+
+            <h3>3.1 ฮาร์ดแวร์คอมพิวเตอร์ (Computer Hardware)</h3>
+            <p>คือ อุปกรณ์คอมพิวเตอร์ที่สามารถมองเห็นและจับต้องได้ โดยแบ่งออกได้เป็น 5 กลุ่มหลัก ดังนี้:</p>
+
+            <div class="usage-types-container">
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">1</span> อุปกรณ์ภายในตัวเครื่อง (System Unit)
+                    </div>
+                    <div class="usage-content">
+                        <p>ได้แก่ แหล่งจ่ายไฟ (Power Supply) แผงวงจรหลัก (Motherboard) ซีพียู (CPU) แผงหน่วยความจำ (RAM) ฮาร์ดดิสก์ไดรฟ์ (Hard Disk Drive) ตัวอ่านแผ่นข้อมูลแบบบันทึกแสง (Optical Drive) และแผ่นการ์ด (External Card) ต่าง ๆ</p>
+                    </div>
+                </div>
+
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">2</span> อุปกรณ์รับข้อมูล (Input Devices)
+                    </div>
+                    <div class="usage-content">
+                        <p>ทำหน้าที่รับข้อมูลต่าง ๆ เข้าสู่ระบบ เช่น แป้นพิมพ์ (Keyboard), เมาส์ (Mouse), ไมโครโฟน (Microphone), สแกนเนอร์ (Scanner) และกล้องเว็บแคม (Webcam)</p>
+                    </div>
+                </div>
+
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">3</span> อุปกรณ์แสดงผล (Output Devices)
+                    </div>
+                    <div class="usage-content">
+                        <p>ทำหน้าที่นำข้อมูลผลลัพธ์แสดงออกมาในรูปแบบต่าง ๆ เช่น จอภาพ (Monitor), เครื่องพิมพ์ (Printer) และลำโพง (Speaker)</p>
+                    </div>
+                </div>
+
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">4</span> สื่อบันทึกข้อมูล (Storage Devices)
+                    </div>
+                    <div class="usage-content">
+                        <p>ใช้อุปกรณ์ที่ใช้จัดเก็บข้อมูล ได้แก่ แฟลชไดรฟ์ (USB Flash Drive), แผ่น CD/DVD, ฮาร์ดดิสก์พกพา (External HDD) และการ์ดหน่วยความจำ (Memory Card)</p>
+                    </div>
+                </div>
+
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-number">5</span> อุปกรณ์เสริมการใช้งาน (Accessory Devices)
+                    </div>
+                    <div class="usage-content">
+                        <p>อุปกรณ์เพื่อเสริมการทำงาน เช่น เครื่องสำรองไฟ (UPS), ตัวเพิ่มช่องต่อ USB (USB Hub) และตัวอ่านการ์ด (Card Reader)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>3.2 ซอฟต์แวร์คอมพิวเตอร์ (Computer Software)</h3>
+            <p>คือ โปรแกรมหรือชุดคำสั่งที่ใช้สั่งงานคอมพิวเตอร์ให้ทำงานตามวัตถุประสงค์ แบ่งเป็น 2 ประเภทใหญ่ ๆ คือ</p>
+
+            <ul class="no-bullet">
+                <li>
+                    <b>1. ซอฟต์แวร์ระบบ (System Software)</b><br>
+                    หรือที่เรียกกันว่า "ระบบปฏิบัติการ (OS)" ทำหน้าที่จัดสภาพแวดล้อมให้ผู้ใช้ติดต่อกับคอมพิวเตอร์ได้ รวมถึงเป็นฐานให้โปรแกรมอื่นทำงาน
+                    <br><em>ตัวอย่าง:</em> Windows, Linux, Mac OS (สำหรับคอมพิวเตอร์) และ Android, iOS (สำหรับมือถือ)
+                </li>
+                <li>
+                    <b>2. ซอฟต์แวร์ประยุกต์ (Application Software)</b><br>
+                    หรือ "แอปพลิเคชัน" เป็นโปรแกรมที่เขียนขึ้นตามความต้องการใช้งานเฉพาะด้าน
+                    <br><em>ตัวอย่าง:</em> โปรแกรมสำนักงาน (Microsoft Office), โปรแกรมกราฟิก, เกม, โปรแกรมบัญชี หรือโปรแกรมเงินเดือน
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+
+</body>
+</html>
